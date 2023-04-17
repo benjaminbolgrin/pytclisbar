@@ -5,7 +5,12 @@
 from pytclisbar import StatusBar
 
 statusBarHeadline: str = 'Loading'
+
+
+
 totalIterations: int = 10_000
+
+
 
 statusBar: StatusBar = StatusBar(statusBarHeadline, totalIterations)
 
