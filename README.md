@@ -21,7 +21,7 @@ statusBar.start()
 for i in range(0, 10000):
 
 
-  statusBar.setCurrentIteration(i+1)
+&nbsp;&nbsp;&nbsp;&nbsp;statusBar.setCurrentIteration(i+1)
 
 
 
