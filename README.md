@@ -1,2 +1,2 @@
 # pytclisbar
-## A CLI status bar written in Python
+## A threaded CLI status bar written in Python.
