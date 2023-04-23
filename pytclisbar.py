@@ -1,3 +1,21 @@
+# "pytclisbar" is a threaded command line interface status bar for Python.
+# Author: Benjamin Bolgrin
+
+# Usage:
+# Import the StatusBar class from the pytclisbar module
+# Initialize a StatusBar object by providing a headline and the total number of your loop's iterations
+# Start the status bar by calling the 'start()' method
+# Update the status by calling the 'setCurrentIteration()' method
+
+# Modify the bar length by calling the 'setStatusBarLength()' method.
+# Modify the spinner speed by calling the 'setSpinnerSpeed()' method.
+# Modify the status bar prefix by calling the 'setStatusBarPrefix()' method.
+# Modify the status bar suffix by calling the 'setStatusBarSuffix()' method.
+# Modify the 'current iteration' char by calling the 'setCurrentIterationChar()' method.
+# Modify the 'iterations left' char by calling the 'setIterationsLeftChar()' method.
+
+# It's recommended to call the 'join()' method, to synchronize threads before proceeding with your program.
+
 from threading import Thread
 import time
 
@@ -58,14 +76,15 @@ class StatusBar(Thread):
             print('\r{}{}{}{}{} {:6.2f}%'.format(self.statusBarPrefix, self.currentIterationString,
                                                  animationStep,
                                                  self.iterationsLeftString[1:], self.statusBarSuffix,
-                                                 self.percentageDone), end="")
+                                                 self.percentageDone), end=" ")
             i += 1
 
         if self.currentIteration == self.totalIterations:
 
             print('\r{}{}{} {:6.2f}%'.format(self.statusBarPrefix,
                                                self.currentIterationString,
-                                               self.statusBarSuffix, self.percentageDone), end="\n")
+                                               self.statusBarSuffix, self.percentageDone), end=" ")
+            print()
             return
 
     def setCurrentIteration(self, currentIteration: int) -> None:
